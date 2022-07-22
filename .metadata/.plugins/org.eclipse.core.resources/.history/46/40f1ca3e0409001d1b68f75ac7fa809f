@@ -1,0 +1,25 @@
+package d4;
+
+public class GestioneDipendenti {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Dipendente d1 = new Dipendente("ergwebwrbs", 800, 15, Livello.OPERAIO, Dipartimento.PRODUZIONE);
+		Dipendente d2 = new Dipendente("dhndxrfhbs", 900, 20, Livello.OPERAIO, Dipartimento.PRODUZIONE);
+		Dipendente d3 = new Dipendente("ehrkgviuer", 1200, 35, Livello.IMPIEGATO, Dipartimento.AMMINISTRAZIONE);
+		Dipendente d4 = new Dipendente("iwurqv4iut", 1600, 50, Livello.DIRIGENTE, Dipartimento.VENDITE);
+		
+		d1.promuovi();
+		d3.promuovi();
+		
+		System.out.println(d1.getMatricola());
+		System.out.println(d1.getStipendio());
+		System.out.println(d1.getImportoOrarioStraordinario());
+		System.out.println(d1.getLvl());
+		System.out.println(d1.getDpt() + "\n------------------");
+		
+	}
+
+
+}

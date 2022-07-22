@@ -1,0 +1,7 @@
+package d5;
+
+public interface IAudio {
+	public void play();
+	public void volumeUp();
+	public void volumeDown();
+}

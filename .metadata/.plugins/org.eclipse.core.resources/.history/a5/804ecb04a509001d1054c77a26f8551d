@@ -1,0 +1,23 @@
+package d5;
+
+public class Video extends Playable implements IVideo {
+	private int brightness = 5;
+
+	public Video(String title, int duration, int brightness) {
+		super(title, duration);
+		this.brightness = brightness;
+	}
+
+	@Override
+	public void brightnessUp() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void brightnessDown() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

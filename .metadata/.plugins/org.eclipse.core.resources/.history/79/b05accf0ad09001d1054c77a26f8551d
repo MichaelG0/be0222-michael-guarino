@@ -1,0 +1,23 @@
+package d5;
+
+import java.util.Scanner;
+
+public class App {
+	public static Scanner scn = new Scanner(System.in);
+
+    public static void main(String[] args) {
+    	
+        System.out.println("Inserisci una stringa: ");
+        String line = scn.nextLine();
+        System.out.println("Inserisci un intero: ");
+        while (!scn.hasNextInt()) {
+            System.out.println("Error. Enter a valid duration:");
+            scn.nextLine();
+        }
+        int duration = scn.nextInt();
+
+        System.out.println("Stringa: " + line);
+        System.out.println("Numero: " + duration);
+    }
+
+}

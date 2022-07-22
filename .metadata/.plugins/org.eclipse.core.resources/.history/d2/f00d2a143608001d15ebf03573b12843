@@ -1,0 +1,67 @@
+package d3;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println(evenOddString("ciaao"));
+		System.out.println(leapYear(2100));
+		System.out.println(printNum0to3(1));
+		System.out.println(splitString("dfg aegve:qfgaew gWE"));
+		System.out.println(countdown(9));
+	}
+
+	public static boolean evenOddString(String str) {
+		return str.length() % 2 == 0;
+	}
+
+	public static boolean leapYear(int year) {
+		boolean res = false;
+		if (year % 400 == 0)
+			res = true;
+		else if (year % 4 == 0 && year % 100 != 0)
+			res = true;
+		return res;
+	}
+
+	public static String printNum0to3(int n) {
+		String res;
+		switch (n) {
+		case 0:
+			res = "zero";
+			break;
+		case 1:
+			res = "one";
+			break;
+		case 2:
+			res = "two";
+			break;
+		case 3:
+			res = "three";
+			break;
+		default:
+			res = "Value must be between 0 and 3";
+		}
+		return res;
+	}
+	
+	public static String splitString(String str) {
+		String res = "";
+		String lastTwo = res;
+		int i = 0;
+		while (i < str.length() && !":q".equals(lastTwo)) {
+			lastTwo = i >= 1 ? "" + str.charAt(i - 1) + str.charAt(i) : res;
+			res = "".equals(res) ? "" + str.charAt(i) : res + ", " + str.charAt(i);
+			i++;
+		}
+		return res;
+	}
+
+	public static int countdown(int n) {
+		for (int i = n; i >= 0; i--)
+			return i;
+		return i;
+	}
+	
+}

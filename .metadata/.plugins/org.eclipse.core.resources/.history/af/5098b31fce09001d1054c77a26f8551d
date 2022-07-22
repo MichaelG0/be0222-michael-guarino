@@ -1,0 +1,7 @@
+package d5;
+
+public interface IImage {
+	public void show();
+	public void brightnessUp();
+	public void brightnessDown();
+}

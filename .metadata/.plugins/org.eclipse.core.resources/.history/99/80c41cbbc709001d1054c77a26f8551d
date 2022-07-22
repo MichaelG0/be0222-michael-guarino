@@ -1,0 +1,56 @@
+package d5;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		Image img1 = new Image(setTitle());
+		Image img2 = new Image(setTitle());
+		Audio aud1 = new Audio(setTitle(), setDuration());
+		Audio aud2 = new Audio(setTitle(), setDuration());
+		Video vid1 = new Video(setTitle(), setDuration());
+		
+		img1.getTitle();
+		img2.getTitle();
+		aud1.getTitle();
+		aud2.getTitle();
+		vid1.getTitle();
+	}
+	
+	public static String setTitle() {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Insert title:");
+		String title = scn.nextLine();
+		System.out.println("Title: " + title);
+		scn.close();
+		return title;
+	}
+	
+	public static int setDuration() {
+		Scanner scn = new Scanner(System.in);
+		int duration = 0;
+		boolean badValue = true;
+		
+		do {
+			System.out.println("Insert duration:");
+			try {
+				duration = scn.nextInt();
+				if (duration < 1) {
+					System.out.println("Error. Duration must be a value of 1 or more.");
+					scn.nextLine();
+				} else {
+					badValue = false;
+				}
+			} catch (Exception e) {
+				System.out.println("Error. Duration must be a value of 1 or more.");
+				scn.nextLine();
+			}
+		} while (badValue);
+		
+		System.out.println("Duration: " + duration);
+		scn.close();
+		return duration;
+	}
+
+}

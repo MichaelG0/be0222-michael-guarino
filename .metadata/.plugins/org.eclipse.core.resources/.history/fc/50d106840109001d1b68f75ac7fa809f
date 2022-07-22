@@ -1,0 +1,25 @@
+package d4;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Dipendente d1 = new Dipendente("John", Dipartimento.AMMINISTRAZIONE);
+		calcolaPaga(d1);
+		calcolaPagaPiuStraordinario(d1, 12);
+	}
+
+	public static double calcolaPaga(Dipendente d) {
+		double s = d.getStipendio();
+		System.out.println(s);
+		return s;
+	}
+	
+	public static double calcolaPagaPiuStraordinario(Dipendente d, int oreDiStraordinario) {
+		double s = d.getStipendio() + d.getImportoOrarioStraordinario() * oreDiStraordinario;
+		System.out.println(s);
+		return s;
+	}
+
+}

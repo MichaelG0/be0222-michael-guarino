@@ -1,0 +1,23 @@
+package d5;
+
+import absClasses.Multimedia;
+
+public class Audio extends Multimedia implements IAudio {
+	private int volume = 5;
+
+	public Audio(String title, int volume) {
+		super(title);
+		this.volume = volume;
+	}
+	
+	@Override
+	public void volumeUp() {
+		if (this.volume >= 1 && this.volume <= 10) this.volume++;
+	}
+
+	@Override
+	public void volumeDown() {
+		if (this.volume >= 1 && this.volume <= 10) this.volume--;
+	}
+
+}

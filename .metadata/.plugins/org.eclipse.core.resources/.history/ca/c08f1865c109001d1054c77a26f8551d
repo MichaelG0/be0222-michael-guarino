@@ -1,0 +1,36 @@
+package d5;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+
+		System.out.println("Inserisci una stringa: ");
+		String line = scn.nextLine();
+		int duration = 0;
+		boolean badValue = true;
+		do {
+			System.out.println("Insert duration:");
+			try {
+				duration = scn.nextInt();
+				if (duration < 1) {
+					System.out.println("Error. Duration must be a value of 1 or more.");
+					scn.nextLine();
+				} else {
+					badValue = false;
+				}
+			} catch (Exception e) {
+				System.out.println("Error. Duration must be a value of 1 or more.");
+				scn.nextLine();
+			}
+		} while (badValue);
+
+		System.out.println("Stringa: " + line);
+		System.out.println("Numero: " + duration);
+
+		scn.close();
+	}
+
+}

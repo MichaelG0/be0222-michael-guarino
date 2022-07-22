@@ -1,0 +1,63 @@
+package d5;
+
+import java.util.Scanner;
+
+public class App {
+	public static Scanner scn = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		String title1 = setTitle();
+		String title2 = setTitle();
+		String title3 = setTitle();
+		int duration3 = 3;
+		String title4 = setTitle();
+		int duration4 = 3;
+		String title5 = setTitle();
+		int duration5 = 3;
+		
+		
+		Image img1 = new Image(title1);
+		Image img2 = new Image(title2);
+		Audio aud1 = new Audio(title3, duration3);
+		Audio aud2 = new Audio(title4, duration4);
+		Video vid1 = new Video(title5, duration5);
+		
+		img1.getTitle();
+		img2.getTitle();
+		aud1.getTitle();
+		aud2.getTitle();
+		vid1.getTitle();
+	}
+	
+	public static String setTitle() {
+		System.out.println("Insert title:");
+		String title = scn.nextLine();
+		System.out.println("Title: " + title);
+		return title;
+	}
+	
+	public static int setDuration() {
+		int duration = 0;
+		boolean badValue = true;
+		
+		do {
+			System.out.println("Insert duration:");
+			try {
+				duration = scn.nextInt();
+				if (duration < 1) {
+					System.out.println("Error. Duration must be a value of 1 or more.");
+					scn.nextLine();
+				} else {
+					badValue = false;
+				}
+			} catch (Exception e) {
+				System.out.println("Error. Duration must be a value of 1 or more.");
+				scn.nextLine();
+			}
+		} while (badValue);
+		
+		System.out.println("Duration: " + duration);
+		return duration;
+	}
+
+}

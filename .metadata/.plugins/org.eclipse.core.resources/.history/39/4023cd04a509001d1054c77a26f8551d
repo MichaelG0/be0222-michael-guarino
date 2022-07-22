@@ -1,0 +1,9 @@
+package d5;
+
+public class Audio extends Playable implements IAudio {
+
+	public Audio(String title, int duration) {
+		super(title, duration);
+	}
+
+}

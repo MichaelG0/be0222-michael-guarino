@@ -1,0 +1,14 @@
+package d4;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Dipendente d1 = new Dipendente("John", Dipartimento.AMMINISTRAZIONE);
+		
+		calcolaPagaPiuStraordinario(d1, 0);
+	}
+
+
+}

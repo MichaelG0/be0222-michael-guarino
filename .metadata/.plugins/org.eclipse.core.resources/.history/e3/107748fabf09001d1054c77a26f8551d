@@ -1,0 +1,39 @@
+package d5;
+
+import java.util.Scanner;
+
+public class App {
+
+    public static void main(String[] args) {
+    	Scanner scn = new Scanner(System.in);
+    	
+        System.out.println("Inserisci una stringa: ");
+        String line = scn.nextLine();
+        System.out.println("Inserisci un intero: ");
+        int duration = 0;
+//        while (!scn.hasNextInt() || scn.nextInt() < 1) {
+//            System.out.println("Error. Duration must be a value of 1 or more:");
+//            scn.nextInt();
+//        }
+        boolean badNumber;
+        do{
+            System.out.print("Please print your number: ");
+            try{
+              int i = scn.nextInt(); 
+              System.out.println("Your Number is: " + i);
+              badNumber = false;
+            }
+            catch(Exception e){
+              System.out.println("Bad number");
+              scn.nextLine();
+              badNumber = true;
+            }
+          }while(badNumber);
+
+        System.out.println("Stringa: " + line);
+        System.out.println("Numero: " + duration);
+        
+        scn.close();
+    }
+
+}
