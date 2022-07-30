@@ -23,8 +23,8 @@ public class Book extends Read {
 
 	@Override
 	public String toString() {
-		return "Book [author=" + author + ", genre=" + genre + ", isbn=" + isbn + ", title=" + title
-				+ ", publicationYear=" + publicationYear + ", numberOfPages=" + numberOfPages + "]";
+		return "Book [isbn=_" + isbn + "_, title=_" + title + "_, publicationYear=_" + publicationYear
+				+ "_, numberOfPages=_" + numberOfPages + "_, author=_" + author + "_, genre=_" + genre + "_]";
 	}
-	
+
 }

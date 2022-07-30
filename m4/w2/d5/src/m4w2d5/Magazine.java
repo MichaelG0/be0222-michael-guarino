@@ -17,8 +17,8 @@ public class Magazine extends Read {
 
 	@Override
 	public String toString() {
-		return "Magazine [periodicity=" + periodicity + ", isbn=" + isbn + ", title=" + title + ", publicationYear="
-				+ publicationYear + ", numberOfPages=" + numberOfPages + "]";
+		return "Magazine [isbn=_" + isbn + "_, title=_" + title + "_, publicationYear=_" + publicationYear
+				+ "_, numberOfPages=_" + numberOfPages + "_, periodicity=_" + periodicity + "_]";
 	}
-	
+
 }
