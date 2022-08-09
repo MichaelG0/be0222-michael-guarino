@@ -1,6 +1,7 @@
 package m4w4.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class SeasonTicket extends Ticket {
@@ -15,6 +16,7 @@ public class SeasonTicket extends Ticket {
 		this.duration = duration;
 	}
 
+	@ManyToOne
 	public Card getCard() {
 		return card;
 	}

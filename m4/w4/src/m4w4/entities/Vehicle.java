@@ -3,6 +3,7 @@ package m4w4.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Vehicle {
@@ -28,6 +29,7 @@ public class Vehicle {
 		this.type = type;
 	}
 
+	@ManyToOne
 	public Maintenance getMaintenance() {
 		return maintenance;
 	}

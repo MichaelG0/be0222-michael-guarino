@@ -20,18 +20,19 @@ public class AuthorizedDealer {
 		this.id = id;
 	}
 
-	public Ticket issueTicket() {
-		Ticket tkt = new Ticket();
-		tkt.setIssueDate(LocalDate.now());
-		tkt.setUsed(false);
-		return tkt;
-	}
+//	public Ticket issueTicket() {
+//		Ticket tkt = new Ticket();
+//		tkt.setIssueDate(LocalDate.now());
+//		tkt.setUsed(false);
+//		return tkt;
+//	}
+//	
+//	public SeasonTicket issueSeasonTicket(Long cardNum, Duration d) {
+//		SeasonTicket tkt = new SeasonTicket();
+//		tkt.setIssueDate(LocalDate.now());
+//		tkt.setUsed(false);
+//		tkt.setDuration(d);
+//		return tkt;
+//	}
 	
-	public SeasonTicket issueSeasonTicket(Long cardNum, Duration d) {
-		SeasonTicket tkt = new SeasonTicket();
-		tkt.setIssueDate(LocalDate.now());
-		tkt.setUsed(false);
-		tkt.setDuration(d);
-		return tkt;
-	}
 }

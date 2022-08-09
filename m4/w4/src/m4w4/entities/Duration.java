@@ -5,6 +5,12 @@ public enum Duration {
 	MONTHLY(30);
 
 	Duration(int i) {
-		// TODO Auto-generated constructor stub
+		duration = i;
+	}
+
+	private int duration;
+
+	public int getDuration() {
+		return duration;
 	}
 }

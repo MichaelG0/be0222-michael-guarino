@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Maintenance {
@@ -23,6 +24,7 @@ public class Maintenance {
 		this.id = id;
 	}
 
+	@ManyToOne
 	public Vehicle getVehicle() {
 		return vehicle;
 	}
