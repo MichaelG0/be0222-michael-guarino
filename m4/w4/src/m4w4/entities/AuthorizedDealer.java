@@ -7,18 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class AuthorizedDealer {
-	private Long id;
-
-	@Id
-	@GeneratedValue
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+public class AuthorizedDealer extends TicketSeller {
 
 //	public Ticket issueTicket() {
 //		Ticket tkt = new Ticket();
