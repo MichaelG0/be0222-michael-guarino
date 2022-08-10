@@ -4,18 +4,25 @@ import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Ticket {
 	private Long id;
-	private LocalDate issueDate;
+	protected LocalDate issueDate = LocalDate.now();
 	private boolean used = false;
 	private TicketSeller ts;
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "tkt_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tkt_seq")
 	public Long getId() {
 		return id;
 	}
@@ -41,6 +48,7 @@ public class Ticket {
 	}
 	
 	@ManyToOne
+	@JoinColumn(name = "ticket_seller")
 	public TicketSeller getTs() {
 		return ts;
 	}

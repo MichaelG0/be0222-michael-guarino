@@ -10,9 +10,13 @@ import org.slf4j.LoggerFactory;
 
 public class JpaUtil<T> {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
-
 	protected static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("publicTransport");
-
+	private final Class<T> type;
+	
+	public JpaUtil(Class<T> type) {
+		this.type = type;
+	}
+	
 	public void save(T object) {
 		EntityManager em = emf.createEntityManager();
 		try {
@@ -24,6 +28,18 @@ public class JpaUtil<T> {
 			em.getTransaction().rollback();
 			log.error("Error saving object: " + object.getClass().getSimpleName(), ex);
 			throw ex;
+		} finally {
+			em.close();
+		}
+	}
+	
+	public T getById(long id) {
+		var em = emf.createEntityManager();
+		try {
+			return em.find(type, id);
+		} catch (Exception ex) {
+			log.error("Error retrieving entity with id = {}", id, ex);
+			return null;
 		} finally {
 			em.close();
 		}

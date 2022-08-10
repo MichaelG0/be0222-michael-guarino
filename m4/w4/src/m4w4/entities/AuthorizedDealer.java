@@ -3,8 +3,6 @@ package m4w4.entities;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
 @Entity
 public class AuthorizedDealer extends TicketSeller {
