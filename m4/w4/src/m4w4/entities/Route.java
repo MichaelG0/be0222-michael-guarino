@@ -10,7 +10,7 @@ public class Route {
 	private String departureArea;
 	private String terminal;
 	private String expectedTravelTime;
-	private String[] stops;
+	private String stops;
 
 	@Id
 	@GeneratedValue
@@ -46,11 +46,11 @@ public class Route {
 		this.expectedTravelTime = expectedTravelTime;
 	}
 
-	public String[] getStops() {
+	public String getStops() {
 		return stops;
 	}
 
-	public void setStops(String[] stops) {
+	public void setStops(String stops) {
 		this.stops = stops;
 	}
 

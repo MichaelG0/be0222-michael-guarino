@@ -10,10 +10,12 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@NamedQuery(name = "tktBySeller", query = "SELECT t FROM Ticket t WHERE t.ts = :ts AND t.issueDate >= :fromDate AND t.issueDate <= :toDate")
 public class Ticket {
 	private Long id;
 	protected LocalDate issueDate = LocalDate.now();

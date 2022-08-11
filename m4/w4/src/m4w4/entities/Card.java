@@ -9,7 +9,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 @Entity
-@NamedQuery(name = "elByCardNum", query = "SELECT el FROM Card el WHERE el.cardNumber = :cardNumber")
+@NamedQuery(name = "elByCardNum", query = "SELECT c FROM Card c WHERE c.cardNumber = :cardNumber")
+@NamedQuery(name = "isTktValid", query = "SELECT c FROM Card c WHERE c.expirationDate >= :today AND c.seaTkt.expirationDate >= :today")
 public class Card {
 	private Long cardNumber;
 	private LocalDate issueDate;
@@ -31,14 +32,13 @@ public class Card {
 
 	public void setIssueDate(LocalDate issueDate) {
 		this.issueDate = issueDate;
-		setExpirationDate(issueDate);
 	}
 
 	public LocalDate getExpirationDate() {
 		return expirationDate;
 	}
 
-	private void setExpirationDate(LocalDate issueDate) {
+	public void setExpirationDate(LocalDate issueDate) {
 		this.expirationDate = issueDate.plusYears(1);
 	}
 	
