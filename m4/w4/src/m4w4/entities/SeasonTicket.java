@@ -8,8 +8,8 @@ import javax.persistence.Enumerated;
 
 @Entity
 public class SeasonTicket extends Ticket {
-	private Duration duration = Duration.WEEKLY;
-	private LocalDate expirationDate = this.issueDate.plusDays(7);
+	private Duration duration;
+	private LocalDate expirationDate;
 	
 	@Override
 	public void setIssueDate(LocalDate issueDate) {
@@ -29,8 +29,8 @@ public class SeasonTicket extends Ticket {
 		return expirationDate;
 	}
 
-	public void setExpirationDate(LocalDate issueDate) {
-		this.expirationDate = issueDate.plusDays(this.duration.getDuration());
+	public void setExpirationDate(LocalDate expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 
 }

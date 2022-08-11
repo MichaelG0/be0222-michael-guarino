@@ -18,7 +18,7 @@ import javax.persistence.SequenceGenerator;
 @NamedQuery(name = "tktBySeller", query = "SELECT t FROM Ticket t WHERE t.ts = :ts AND t.issueDate >= :fromDate AND t.issueDate <= :toDate")
 public class Ticket {
 	private Long id;
-	protected LocalDate issueDate = LocalDate.now();
+	protected LocalDate issueDate;
 	private boolean used = false;
 	private TicketSeller ts;
 
@@ -57,6 +57,11 @@ public class Ticket {
 	
 	public void setTs(TicketSeller ts) {
 		this.ts = ts;
+	}
+
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", issueDate=" + issueDate + ", used=" + used + ", ts=" + ts + "]";
 	}
 
 }

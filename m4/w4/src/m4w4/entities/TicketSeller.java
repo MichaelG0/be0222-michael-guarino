@@ -24,4 +24,9 @@ public abstract class TicketSeller {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return "TicketSeller [id=" + id + "]";
+	}
+
 }

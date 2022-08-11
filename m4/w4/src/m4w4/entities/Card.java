@@ -10,7 +10,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 @NamedQuery(name = "elByCardNum", query = "SELECT c FROM Card c WHERE c.cardNumber = :cardNumber")
-@NamedQuery(name = "isTktValid", query = "SELECT c FROM Card c WHERE c.expirationDate >= :today AND c.seaTkt.expirationDate >= :today")
 public class Card {
 	private Long cardNumber;
 	private LocalDate issueDate;
@@ -38,8 +37,8 @@ public class Card {
 		return expirationDate;
 	}
 
-	public void setExpirationDate(LocalDate issueDate) {
-		this.expirationDate = issueDate.plusYears(1);
+	public void setExpirationDate(LocalDate expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 	
 	@OneToOne
