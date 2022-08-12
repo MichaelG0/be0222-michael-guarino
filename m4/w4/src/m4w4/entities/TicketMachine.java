@@ -3,7 +3,7 @@ package m4w4.entities;
 import javax.persistence.Entity;
 
 @Entity
-public class TicketMachine extends TicketSeller {
+public class TicketMachine extends TicketDealerSuper {
 	private boolean active = true;
 
 	public boolean isActive() {

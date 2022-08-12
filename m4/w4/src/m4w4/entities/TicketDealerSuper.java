@@ -10,7 +10,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class TicketSeller {
+public abstract class TicketDealerSuper {
 	private Long id;
 
 	@Id
@@ -26,7 +26,7 @@ public abstract class TicketSeller {
 
 	@Override
 	public String toString() {
-		return "TicketSeller [id=" + id + "]";
+		return getClass().getSimpleName() + " [id=" + id + "]";
 	}
 
 }

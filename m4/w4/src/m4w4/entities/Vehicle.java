@@ -1,18 +1,23 @@
 package m4w4.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Vehicle {
 	private Long id;
-	private Type type;
-	private Maintenance maintenance;
+	private VType type;
+	private Route route;
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "vehicle_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vehicle_seq")
 	public Long getId() {
 		return id;
 	}
@@ -21,20 +26,27 @@ public class Vehicle {
 		this.id = id;
 	}
 
-	public Type getType() {
+	@Enumerated(EnumType.STRING)
+	public VType getVType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setVType(VType type) {
 		this.type = type;
 	}
 
-	@ManyToOne
-	public Maintenance getMaintenance() {
-		return maintenance;
+	@OneToOne
+	public Route getRoute() {
+		return route;
 	}
 
-	public void setMaintenance(Maintenance maintenance) {
-		this.maintenance = maintenance;
+	public void setRoute(Route route) {
+		this.route = route;
 	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [id=" + id + ", type=" + type + "]";
+	}
+	
 }

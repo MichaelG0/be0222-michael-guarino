@@ -4,8 +4,10 @@ import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Maintenance {
@@ -15,7 +17,8 @@ public class Maintenance {
 	private LocalDate endDate;
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "maint_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "maint_seq")
 	public Long getId() {
 		return id;
 	}

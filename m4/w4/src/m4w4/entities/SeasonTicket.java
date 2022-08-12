@@ -7,14 +7,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Entity
-public class SeasonTicket extends Ticket {
+public class SeasonTicket extends TicketSuper {
 	private Duration duration;
 	private LocalDate expirationDate;
-	
-	@Override
-	public void setIssueDate(LocalDate issueDate) {
-		this.issueDate = issueDate;
-	}
 
 	@Enumerated(EnumType.STRING)
 	public Duration getDuration() {

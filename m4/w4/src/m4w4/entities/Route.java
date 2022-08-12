@@ -2,7 +2,9 @@ package m4w4.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Route {
@@ -10,10 +12,10 @@ public class Route {
 	private String departureArea;
 	private String terminal;
 	private String expectedTravelTime;
-	private String stops;
 
 	@Id
-	@GeneratedValue
+	@SequenceGenerator(name = "route_seq")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "route_seq")
 	public Long getId() {
 		return id;
 	}
@@ -46,12 +48,9 @@ public class Route {
 		this.expectedTravelTime = expectedTravelTime;
 	}
 
-	public String getStops() {
-		return stops;
-	}
-
-	public void setStops(String stops) {
-		this.stops = stops;
+	@Override
+	public String toString() {
+		return "Route [id=" + id + "]";
 	}
 
 }
