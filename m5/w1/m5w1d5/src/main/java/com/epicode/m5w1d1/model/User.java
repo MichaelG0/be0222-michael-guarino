@@ -1,20 +1,20 @@
 package com.epicode.m5w1d1.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NonNull;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class User {
 	@Id
-	@GeneratedValue
-	private Long id;
+	@NonNull
 	private String username;
+	@NonNull
 	private String fullName;
+	@NonNull
 	private String email;
+	
 }

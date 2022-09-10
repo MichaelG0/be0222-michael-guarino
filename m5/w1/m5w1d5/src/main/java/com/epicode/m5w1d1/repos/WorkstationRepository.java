@@ -6,10 +6,12 @@ import java.time.LocalDate;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
 import com.epicode.m5w1d1.model.Workstation;
 import com.epicode.m5w1d1.model.WsType;
 
+@Repository
 public interface WorkstationRepository extends PagingAndSortingRepository<Workstation, Long> {
 	public Page<Workstation> findById(Long id, Pageable pageable);
 

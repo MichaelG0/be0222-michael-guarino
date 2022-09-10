@@ -7,20 +7,22 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NonNull;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Reservation {
 	@Id
 	@GeneratedValue
 	private Long id;
 	@ManyToOne
+	@NonNull
 	private User user;
 	@ManyToOne
+	@NonNull
 	private Workstation ws;
+	@NonNull
 	private LocalDate date;
 	
 }
