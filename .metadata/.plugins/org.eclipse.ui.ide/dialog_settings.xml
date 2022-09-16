@@ -11,16 +11,21 @@
 		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\gclon\Desktop\Epicode Exercises\Soluzione-SpringBoot_w1d4\Soluzione\GodFatherPizza"/>
+			<item value="C:\Users\gclon\Desktop\Epicode Exercises\Esercizio0308"/>
+			<item value="C:\Users\gclon\Desktop\Epicode Exercises\Soluzione-20220713T141344Z-001\Soluzione\GestioneEventi"/>
 			<item value="C:\Users\gclon\eclipse-workspace\m4\w1\d2"/>
 			<item value=""/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
 			<item value="C:\Users\gclon\Documents\Epicode\m4\w1\d1.zip"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.m2e.core.wizards.Maven2ProjectWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.m2e"/>
 		</list>
 	</section>
 	<section name="SmartImportWizard">
@@ -28,5 +33,8 @@
 		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\gclon\Desktop\Epicode Exercises\libri_con_sicurezza_(Mauro)\Libri"/>
+		</list>
 	</section>
 </section>

@@ -1,5 +1,0 @@
-package absClasses;
-
-public abstract class Playable {
-
-}
